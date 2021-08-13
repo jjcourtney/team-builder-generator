@@ -2,21 +2,27 @@ const Employee = require("../lib/Employee")
 
 describe("Employee", () => {
     describe("getName", () => {
-        it("", () => {
+        it("should return an name of the Employee", () => {
+            const expected = "Jonathan"
+            const result = new Employee("Jonathan", 1, "asd@asd.com").getName()
 
-            expect()
+            expect(result).toEqual(expected)
         })
     });
     describe("getId", () => {
-        it("", () => {
+        it("should return an id of the Employee", () => {
+            const expected = 1
+            const result = new Employee("Jonathan", 1, "asd@asd.com").getId()
 
-            expect()
+            expect(result).toEqual(expected)
         })
     });
     describe("getEmail", () => {
-        it("", () => {
+        it("should return an email of the Employee", () => {
+            const expected = "asd@asd.com"
+            const result = new Employee("Jonathan", 1, "asd@asd.com").getEmail()
 
-            expect()
+            expect(result).toEqual(expected)
         })
     });
     describe("getRole", () => {
