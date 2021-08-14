@@ -1,8 +1,8 @@
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
-    describe("officeNumber", () => {
-        it("should have a property officeNumber", () => {
+    describe("github", () => {
+        it("should have a property github", () => {
             
             const testEngineer = new Engineer("Jonathan", 1, "asd@asd.com", "testGithub");
             const hasGithub = testEngineer.hasOwnProperty("github");
