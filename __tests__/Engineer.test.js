@@ -4,7 +4,7 @@ describe("Engineer", () => {
     describe("officeNumber", () => {
         it("should have a property officeNumber", () => {
             
-            const testEngineer = new Engineer("Jonathan", 1, "asd@asd.com", "testGitHub");
+            const testEngineer = new Engineer("Jonathan", 1, "asd@asd.com", "testGithub");
             const hasGithub = testEngineer.hasOwnProperty("github");
             const githubType = typeof testEngineer.github;
 
