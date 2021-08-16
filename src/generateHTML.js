@@ -24,13 +24,14 @@ const generateHTML = teamMemberArray => {
 
 // takes an array of Team member objects
 const generateCards = teamMemberArray => {
-    generatedHTML = "";
-    teamMemberArray.forEach(( teamMember) => {
-        
+
+    let generatedHTML = [];
+    teamMemberArray.forEach(teamMember => {
+
         const memberHTML = new Card(teamMember).getCardHTML();
-        generatedHTML.concat(`\n`, memberHTML);
+        generatedHTML.push(memberHTML);
     });
-    return generatedHTML;
+    return generatedHTML.join("\n");
 
 }
 
