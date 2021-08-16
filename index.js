@@ -1,25 +1,18 @@
 const inquirer = require("inquirer");
 
-const generateHTML = require("./src/generateHTML");
-const getQuestions = require("./src/getQuestions");
+const employeeQuestions = require("./src/employeeQuestions");
 const writeHTMLToFile = require("./src/writeHTMLToFile");
 
 const teamMemberArray = []
 
-
-const fs = require('fs');
-
-
-const promptUser = (role) => {
-        return inquirer.prompt(getQuestions(role));
-  };
-
-
-const promptFromDetails = (role) => {
-    return promptUser(role)
-      .then((userInput) => teamMemberArray.push(userInput))
-      .catch((error) => console.error(error));
-  };
+const promptForDetails = (role) => {
+   const questions =  employeeQuestions(role)
+   inquirer.prompt(questions)
+   .then((userInput) => {
+    teamMemberArray.push(userInput);
+    addTeamMember();
+    })
+};
 
 const promptForRole = () => {
     return inquirer.prompt([{   
@@ -28,16 +21,20 @@ const promptForRole = () => {
         name: 'role',
         choices: ["Manager", "Engineer", "Intern"]
     }])
-  }
+}
+
 const addTeamMember = () => {
+
     if (teamMemberArray.length <= 5){
+
         promptForRole()
-        .then(userInput => promptFromDetails(userInput.role))
-        .then(addTeamMember())
-        .catch((error) => console.error(error));
+        .then(userInput => {
+        const { role } = userInput;
+        promptForDetails(role)})
+
     } else {
-        generateHTML()
+        writeHTMLToFile(teamMemberArray);
     }
 }
 
-addTeamMember();
+addTeamMember()
