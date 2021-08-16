@@ -3,10 +3,13 @@ class Card {
         const { name, id, email, role, uniqueData } = teamMember;
         Object.assign(this, { name, id, email, role, uniqueData });
        
-        this.titleClass = "";
-        this.cardHeaderClass = "";
-        this.nameClass = "";
-        this.spanClass = "";
+        this.cardContainerClass = "rounded-lg max-w-xs mt-5 ml-5 shadow-md";
+        this.titleClass = "text-2xl pb-2";
+        this.cardHeaderClass = "bg-blue-800 text-blue-300 rounded-t-lg pl-2";
+        this.nameClass = "text-3xl pb-2";
+        this.spanClass = "shadow-md min-w-full text-center self-center mb-5";
+        this.lowerDivClass = "flex flex-col w-72 text-lg py-10 px-5";
+        this.lowerPClass = "font-bold"
         this.roleObj = this._getRoleObject();
     }
 
@@ -15,44 +18,47 @@ class Card {
         
         switch(this.role) {
             case "Manager":
-                this.icon = "&#128188;"
-                this.uniqueSpan = `Office Number: ${this.uniqueData}`
+                this.icon = "&#128188;";
+                this.uniqueTitle = "Office Number";
                 break;
             case "Engineer":
-                this.icon = "&#128187;"
-                this.uniqueSpan = `Github: ${this.uniqueData}`
+                this.icon = "&#128187;";
+                this.uniqueTitle = "Github";
                 break;
             case "Intern":
-                this.icon = "&#127891;"
-                this.uniqueSpan = `School: ${this.uniqueData}`
+                this.icon = "&#127891;";
+                this.uniqueTitle = "School";
                 break; 
             default:
-                this.icon = "&#128084;"
-                this.uniqueSpan = `Employee`
+                this.icon = "&#128084;";
+                this.uniqueTitle = "Job";
         }
         this.titleContent = `${this.role} ${this.icon}`;
         }
     
     getCardHTML(){
         
-        return `<section>
-    <div class="${this.cardHeaderClass}">
-        <h2 class="${this.nameClass}">${this.name}<h2>
-        <p class="${this.titleClass}">${this.titleContent}</p>
-    </div>
-    <div>
-        <span class="${this.spanClass}">ID: ${this.id}</span>
-        <span class="${this.spanClass}">Email: ${this.email}</span>
-        <span class="${this.spanClass}">${this.uniqueSpan}</span>
-    </div>
-</section>`
+        return `            <section class="${this.cardContainerClass}">
+                <div class="${this.cardHeaderClass}">
+                    <h2 class="${this.nameClass}">${this.name}<h2>
+                    <p class="${this.titleClass}">${this.titleContent}</p>
+                </div>
+                <div class="${this.lowerDivClass}">
+                    <p class="${this.lowerPClass}">ID</p>
+                    <span class="${this.spanClass}">${this.id}</span>
+                    <p class="${this.lowerPClass}">Email</p>
+                    <span class="${this.spanClass}">${this.email}</span>
+                    <p class="${this.lowerPClass}">${this.uniqueTitle}</p>
+                    <span class="${this.spanClass}">${this.uniqueData}</span>
+                </div>
+            </section>`
     }
         
 }
 const testObj = { 
     name : "John",
     id : 1 , 
-    email : "asd@asd.com",
+    email : "asdasdasd@aasdsd.com",
     role : "Manager",
     uniqueData : 1 }
 
