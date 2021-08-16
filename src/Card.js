@@ -55,14 +55,5 @@ class Card {
     }
         
 }
-const testObj = { 
-    name : "John",
-    id : 1 , 
-    email : "asdasdasd@aasdsd.com",
-    role : "Manager",
-    uniqueData : 1 }
 
-const testCard = new Card(testObj)
-
-console.log(testCard.getCardHTML())
 module.exports = Card;
