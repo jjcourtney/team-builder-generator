@@ -1,21 +1,26 @@
 const employeeQuestions = role => [{type: 'input',
     message: `What is the ${role}'s name?`,
-    name: 'name'
+    name: 'name',
+    validate: input => input === "" ? false : true
 },
 {
     type: 'input',
     message: 'What is their id number?',
-    name: 'id'
+    name: 'id',
+    validate: input => input === "" ? false : true
 },
 {
     type: 'input',
     message: 'What is their email address?',
-    name: 'email'
+    name: 'email',
+    validate:  input => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)
+
 },
 {
     type: 'input',
     message: getUniqueQuestion(role),
-    name: 'uniqueData'
+    name: 'uniqueData',
+    validate: input => input === "" ? false : true
 }];
 
 const getUniqueQuestion = role => {
