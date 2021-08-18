@@ -18,9 +18,10 @@ const promptForDetails = (role) => {
     const questions =  employeeQuestions(role)
     inquirer.prompt(questions)
     .then((userInput) => {
-     teamMemberArray.push(userInput);
-     addTeamMember();
-     })
+    userInput.role = role;
+    teamMemberArray.push(userInput);
+    addTeamMember();
+    })
  };
 
 const addTeamMember = () => {
