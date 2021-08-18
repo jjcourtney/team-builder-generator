@@ -5,15 +5,6 @@ const writeHTMLToFile = require("./src/writeHTMLToFile");
 
 const teamMemberArray = []
 
-const promptForDetails = (role) => {
-   const questions =  employeeQuestions(role)
-   inquirer.prompt(questions)
-   .then((userInput) => {
-    teamMemberArray.push(userInput);
-    addTeamMember();
-    })
-};
-
 const promptForRole = () => {
     return inquirer.prompt([{   
         type: 'list',
@@ -23,10 +14,19 @@ const promptForRole = () => {
     }])
 }
 
+const promptForDetails = (role) => {
+    const questions =  employeeQuestions(role)
+    inquirer.prompt(questions)
+    .then((userInput) => {
+     teamMemberArray.push(userInput);
+     addTeamMember();
+     })
+ };
+
 const addTeamMember = () => {
 
-    if (teamMemberArray.length <= 5){
-
+    if (teamMemberArray.length < 5){
+        console.clear();
         promptForRole()
         .then(userInput => {
         const { role } = userInput;
