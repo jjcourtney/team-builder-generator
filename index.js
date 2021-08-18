@@ -10,32 +10,32 @@ const promptForRole = () => {
         type: 'list',
         message: 'What is the role of the employee you would like to add?',
         name: 'role',
-        choices: ["Manager", "Engineer", "Intern"]
+        choices: ["Engineer", "Intern", "Generate team page"]
     }])
 }
 
-const promptForDetails = (role) => {
-    const questions =  employeeQuestions(role)
-    inquirer.prompt(questions)
-    .then((userInput) => {
-    userInput.role = role;
-    teamMemberArray.push(userInput);
-    addTeamMember();
-    })
- };
 
+const promptForDetails = (role) => {
+    if (role === "Generate team page"){
+        writeHTMLToFile(teamMemberArray);
+    } else {
+        const questions =  employeeQuestions(role)
+        inquirer.prompt(questions)
+        .then((userInput) => {
+        userInput.role = role;
+        teamMemberArray.push(userInput);
+        addTeamMember();
+    })
+    };
+}
 const addTeamMember = () => {
 
-    if (teamMemberArray.length < 5){
-        console.clear();
-        promptForRole()
-        .then(userInput => {
-        const { role } = userInput;
-        promptForDetails(role)})
-
-    } else {
-        writeHTMLToFile(teamMemberArray);
-    }
+    console.clear();
+    promptForRole()
+    .then(userInput => {
+    const { role } = userInput;
+    promptForDetails(role)})
 }
 
-addTeamMember()
+
+promptForDetails("Manager")
