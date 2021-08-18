@@ -47,7 +47,7 @@ class Card {
                     <p class="${this.lowerPClass}">ID</p>
                     <span class="${this.spanClass}">${this.id}</span>
                     <p class="${this.lowerPClass}">Email</p>
-                    <span class="${this.spanClass}">${this.email}</span>
+                    <span class="${this.spanClass}"><a href="mailto:${this.email}">${this.email}</a></span>
                     <p class="${this.lowerPClass}">${this.uniqueTitle}</p>
                     <span class="${this.spanClass}">${this.uniqueData}</span>
                 </div>
