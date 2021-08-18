@@ -2,7 +2,7 @@ class Card {
     constructor(teamMember){
         const { name, id, email, role, uniqueData } = teamMember;
         Object.assign(this, { name, id, email, role, uniqueData });
-       
+
         this.cardContainerClass = "rounded-lg max-w-xs mt-5 ml-5 shadow-md";
         this.titleClass = "text-2xl pb-2";
         this.cardHeaderClass = "bg-blue-800 text-blue-300 rounded-t-lg pl-2";
@@ -24,6 +24,7 @@ class Card {
             case "Engineer":
                 this.icon = "&#128187;";
                 this.uniqueTitle = "Github";
+                this.uniqueData = `<a href="https://github.com/${this.uniqueData}" target="blank">${this.uniqueData}</a>`
                 break;
             case "Intern":
                 this.icon = "&#127891;";
