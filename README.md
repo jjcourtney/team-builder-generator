@@ -12,7 +12,7 @@ A command line app, which allows user to create a team page with each team membe
 - [Questions](#questions)
 - [Languages](#languages-and-framworks)
 - [Tests](#tests)
-- [Videos of implementation](#videos)
+- [Videos of implementation](#videos-and-sample-output)
 
 ## Installation
 run
@@ -46,7 +46,8 @@ run
 \
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-## Videos
+## Videos and sample output
 
+[Walkthrough / user video guide](https://drive.google.com/file/d/1GSnwP--d3tJVj_q4scNoowzv7a30ZQOI/view?usp=sharing) 
 
-https://drive.google.com/file/d/1GSnwP--d3tJVj_q4scNoowzv7a30ZQOI/view?usp=sharing
+[![tested with jest](/src/sample-output.png)](/dist/team.html)

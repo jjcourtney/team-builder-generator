@@ -2,4 +2,3 @@ instructions.md
 node_modules
 /src/layout.html
 /__tests__/Card.test.js
-/dist/team.html
