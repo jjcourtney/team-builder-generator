@@ -2,7 +2,8 @@
 
 ## Description
 
-A command line app, which allows user to create a team page with each team members info. Build in node.js.
+A command line app, which allows user to create a team page with each team members info. Build in node.js. \
+ Repo avalible at : [https://github.com/jjcourtney/team-builder-generator](https://github.com/jjcourtney/team-builder-generator) 
 
 ## Table of contents
 
