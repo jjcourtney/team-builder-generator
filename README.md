@@ -52,4 +52,5 @@ run
 
 [Walkthrough / user video guide](https://drive.google.com/file/d/1GSnwP--d3tJVj_q4scNoowzv7a30ZQOI/view?usp=sharing) 
 
-[![tested with jest](/src/sample-output.png)](/dist/team.html)
+Sample output: \
+[![sample HTML](/src/sample-output.png)](/dist/team.html)
